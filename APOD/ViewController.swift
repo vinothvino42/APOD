@@ -25,9 +25,6 @@ extension UIImageView{
 
 class ViewController: UIViewController {
 
-   // var names = ["Bright Planetary Nebula", "Clouds of Andromeda", "Dragons Heart", "Merging Galaxies", "Planets on the Wing", "Teather in Space"]
-  //  var images = ["bright planetary nebula.jpg", "clouds of andromeda.jpg", "dragons heart.jpg", "merging galaxies", "planets on the wing.jpg", "tether in space.jpg"]
-
     var imageURLs = [String]()
     let params = ["date": "2018-03-02"]
     
@@ -89,9 +86,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             let url = URL(string: self.imageURLs[0])
             cell.nasaImageView.af_setImage(withURL: url!)
         }
-        
-        
-        //        cell.nameOfTheImage.text = names[indexPath.row]
+
         cell.nameOfTheImage.text = "New Image"
         cell.dateLabel.text = "Date : 12/01/2018"
         
