@@ -9,32 +9,22 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-import SwiftyJSON
-
-extension UIImageView{
-    
-    func setImageFromURl(stringImageUrl url: String){
-        
-        if let url = NSURL(string: url) {
-            if let data = NSData(contentsOf: url as URL) {
-                self.image = UIImage(data: data as Data)
-            }
-        }
-    }
-}
 
 class ViewController: UIViewController {
 
-    var imageURLs = [String]()
-    let params = ["date": "2018-03-02"]
+    var nasaImageURL = [String]()
+    var nasaDate = [String]()
+    var nasaTitle = [String]()
+    //let params = ["date": "2018-05-16"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         customizingNavigationController()
         requestingUrlWithAF()
+        
     }
     
     func customizingNavigationController() {
@@ -47,18 +37,30 @@ class ViewController: UIViewController {
     
     func requestingUrlWithAF() {
         
-        Alamofire.request(Configure.API_KEY, parameters: params).responseJSON { (responseData) in
+        Alamofire.request(Configure.API_KEY).responseJSON { (responseData) in
             
-            if responseData.result.value != nil {
-                let swiftyJSONValues = JSON(responseData.result.value!)
-                print("JSON Response datas ",swiftyJSONValues)
-                guard let data = swiftyJSONValues["url"].string else { return }
-                self.imageURLs.append(data)
-                print("Nasa array of images \(self.imageURLs[0])")
-                self.collectionView.reloadData()
+            if responseData.result.isSuccess {
+                
+                if let json = responseData.result.value {
+                    if let jsonDict = json as? [[String: Any]] {
+                        
+                        for nasaData in jsonDict {
+                            if let url = nasaData["url"] as? String, let date = nasaData["date"] as? String, let title = nasaData["title"] as? String {
+                                self.nasaImageURL.append(url)
+                                self.nasaDate.append(date)
+                                self.nasaTitle.append(title)
+                            }
+                        }
+                        
+                    }
+                }
+            } else {
+                print("Failed to get JSON Data",responseData.result.error!)
             }
+            self.collectionView.reloadData()
         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -73,22 +75,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        requestingUrlWithAF()
-        return 1
+        return nasaImageURL.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.reuseIdentifer, for: indexPath) as! CustomCollectionViewCell
         
-        if imageURLs.count > 0 {
-            print("Images URL : \(self.imageURLs[0])")
-            let url = URL(string: self.imageURLs[0])
+        if nasaImageURL.count > 0 {
+            print("Images URL : \(self.nasaImageURL[indexPath.row])")
+            let url = URL(string: self.nasaImageURL[indexPath.row])
             cell.nasaImageView.af_setImage(withURL: url!)
         }
 
-        cell.nameOfTheImage.text = "New Image"
-        cell.dateLabel.text = "Date : 12/01/2018"
+        cell.nameOfTheImage.text = "\(nasaTitle[indexPath.row])"
+        cell.dateLabel.text = "\(nasaDate[indexPath.row])"
         
         return cell
     }

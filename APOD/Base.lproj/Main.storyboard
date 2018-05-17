@@ -51,9 +51,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Image Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyF-2W-1aa">
-                                                    <rect key="frame" x="0.0" y="230" width="354" height="30"/>
+                                                    <rect key="frame" x="0.0" y="230" width="354" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="AXE-9m-u14"/>
+                                                        <constraint firstAttribute="height" constant="32" id="AXE-9m-u14"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,7 +7,6 @@ target 'APOD' do
 
   # Pods for APOD
   pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'AlamofireImage', '~> 3.3'
 
 end

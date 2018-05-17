@@ -1,7 +1,6 @@
 ##Project-wide
 .DS_Store
 Configure.swift
-APODModel.swift
 
 ## Build generated
 build/

@@ -6,7 +6,7 @@
 Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.
 
 <h3 align="center">
-<img src="screenshot.jpg" alt="Screenshot of APOD for iOS" />
+<img src="screenshot.png" alt="Screenshot of APOD for iOS" />
 </h3>
 
 ## Compatibility

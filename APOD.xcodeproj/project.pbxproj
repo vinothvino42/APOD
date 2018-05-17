@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D130071F207A948E00E5FFA1 /* Date+GetPreviousDaysFromToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130071E207A948E00E5FFA1 /* Date+GetPreviousDaysFromToday.swift */; };
+		D14471F820AE011400E09687 /* UIImageView+SetImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14471F720AE011400E09687 /* UIImageView+SetImageFromURL.swift */; };
 		D14AE6E920492D8800320DCD /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14AE6E820492D8800320DCD /* Configure.swift */; };
 		D164E33C200876580050451B /* DetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164E33B200876580050451B /* DetailedVC.swift */; };
 		D172C23920085A3D00453B19 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172C23820085A3D00453B19 /* Constants.swift */; };
@@ -23,6 +25,8 @@
 		716C5A8AE1BA441A0E7AB67D /* Pods-APOD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APOD.release.xcconfig"; path = "Pods/Target Support Files/Pods-APOD/Pods-APOD.release.xcconfig"; sourceTree = "<group>"; };
 		BD2AE43574E7AEE361DFED5A /* Pods-APOD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APOD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APOD/Pods-APOD.debug.xcconfig"; sourceTree = "<group>"; };
 		CB8D2D5810B74724B0D6F3F1 /* Pods_APOD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APOD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D130071E207A948E00E5FFA1 /* Date+GetPreviousDaysFromToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+GetPreviousDaysFromToday.swift"; sourceTree = "<group>"; };
+		D14471F720AE011400E09687 /* UIImageView+SetImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SetImageFromURL.swift"; sourceTree = "<group>"; };
 		D14AE6E820492D8800320DCD /* Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
 		D164E33B200876580050451B /* DetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVC.swift; sourceTree = "<group>"; };
 		D172C23820085A3D00453B19 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D130071D207A93F700E5FFA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D130071E207A948E00E5FFA1 /* Date+GetPreviousDaysFromToday.swift */,
+				D14471F720AE011400E09687 /* UIImageView+SetImageFromURL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D1B8E36920072EB800B83139 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		D1B8E37420072EB800B83139 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				D130071D207A93F700E5FFA1 /* Extensions */,
 				D1B8E37520072EB800B83139 /* AppDelegate.swift */,
 				D1B8E37720072EB800B83139 /* ViewController.swift */,
 				D1B8E37920072EB800B83139 /* Main.storyboard */,
@@ -195,13 +209,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-APOD/Pods-APOD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -233,8 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D130071F207A948E00E5FFA1 /* Date+GetPreviousDaysFromToday.swift in Sources */,
 				D1B8E37820072EB800B83139 /* ViewController.swift in Sources */,
 				D1B8E37620072EB800B83139 /* AppDelegate.swift in Sources */,
+				D14471F820AE011400E09687 /* UIImageView+SetImageFromURL.swift in Sources */,
 				D14AE6E920492D8800320DCD /* Configure.swift in Sources */,
 				D172C23920085A3D00453B19 /* Constants.swift in Sources */,
 				D172C23B20085A9C00453B19 /* CustomCollectionViewCell.swift in Sources */,
